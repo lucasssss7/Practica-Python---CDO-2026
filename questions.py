@@ -1,15 +1,21 @@
 import random
 
-words = [
-    "python",
-    "programa",
-    "variable",
-    "funcion",
-    "bucle",
-    "cadena",
-    "entero",
-    "lista",
-]
+#armamos un diccionario con las diferentes palabras agrupadas por categoria
+categorias = {
+    'programacion': ['python', 'funcion', 'bucle', 'variable'],
+    'autos': ['ferrari', 'volvo', 'volkswagen', 'mercedes'],
+    'animales': ['gato', 'pajaro', 'rinoceronte', 'ballena']
+}
+
+#al iniciar cada partida, le mostramos al usuario las categorias disponibles para permitir que elija una
+print('Categorias disponibles:')
+for cat in categorias:
+    print('-', cat)
+
+#le pedimos al usuario que elija una de las categorias disponibles
+elegida = input('Elegi una categoria: ')
+words = categorias[elegida]
+
 
 word = random.choice(words)
 guessed = []
